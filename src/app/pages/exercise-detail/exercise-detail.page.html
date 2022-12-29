@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{exercise.name !== undefined ? exercise.name : "Sin información"}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{exercise.name !== undefined ? exercise.name : "Sin información"}}</ion-card-title>           
+      <ion-img src="{{exercise.gifUrl}}"></ion-img>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>Parte del cuerpo: {{exercise.bodyPart !== undefined ? exercise.bodyPart : "Sin información"}}</p> 
+      <p>Músculo: {{exercise.target!== undefined ? exercise.target : "Sin información"}}</p>      
+      <p>Equipamiento necesario: {{exercise.equipment !== undefined ? exercise.equipment : "Sin información"}}</p>
+    </ion-card-content>
+    <ion-button shape="round" horizontal="center" color="warning" expand="block" (click)="mostrarMenuFav()">
+        <ion-icon slot="icon-only" name="star"></ion-icon> Guardar ejercicio
+    </ion-button>
+  </ion-card>
+</ion-content>

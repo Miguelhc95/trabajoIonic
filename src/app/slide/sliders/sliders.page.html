@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>    
+    <ion-title>Introducción</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <swiper [pagination]="true">
+    <ng-template swiperSlide *ngFor="let slide of slides">
+        
+        <ion-icon className="right" name="close-circle" (click)="toHome()" ></ion-icon>
+         
+        <h1><b>{{slide.title}}</b></h1>
+        <h3>{{slide.subTitle}}</h3>
+        <h5>{{slide.description}}</h5>
+
+        <ion-img src="{{slide.imageSrc}}"></ion-img>  
+                     
+     
+    </ng-template>
+  </swiper>
+</ion-content> 
+        
+   

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Información:</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header *ngIf="productData">
+      {{productData.product_name_es !== undefined ? productData.product_name_es : "Sin información"}}
+    </ion-card-header>
+    <ion-card-content *ngIf="productData">
+
+        <img [src]="productData.selected_images.front.small.es">
+        <br><pre></pre>
+        <h3>Nombre:</h3> 
+        {{productData.product_name_es !== undefined ? productData.product_name_es : "Sin información"}}
+        <br> <pre></pre>      
+        <h3>Ingredientes:</h3>
+        {{productData.ingredients_text_es !== undefined ? productData.ingredients_text_es : "Sin información"}}
+        <br><pre></pre>
+        <h3>Alérgenos:</h3> 
+        {{productData.allergens !== undefined ? productData.allergens: "Sin información"}}
+        <br><pre></pre>
+        <h3>Categorías:</h3> 
+        {{productData.categories_old !== undefined ? productData.categories_old : "Sin información"}}
+        <br><pre></pre>
+        <h3>Categoría Nutricional:</h3> 
+        {{productData.nutriscore_grade !== undefined ? productData.nutriscore_grade : "Sin información"}}
+        <br><pre></pre>
+        <h3>Puntuación Saludable %:</h3> 
+        {{productData.nutriscore_score !== undefined ? productData.nutriscore_score : "Sin información"}}
+        <br><pre></pre>
+        <h3>Tienda/Marca:</h3> 
+        {{productData.stores !== undefined ? productData.stores : "Sin información"}}
+        <br><pre></pre>
+        <br>
+        
+        <ion-button shape="round" horizontal="center" color="warning" expand="block" (click)="mostrarMenuFav()">
+          <ion-icon slot="icon-only" name="star"></ion-icon> Guardar producto
+        </ion-button>
+        
+    </ion-card-content>
+  </ion-card>
+    
+</ion-content>
+

@@ -1,0 +1,88 @@
+
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar id="menuTolbar">        
+      </ion-toolbar>
+      
+    </ion-header>
+    <ion-content class="ion-padding" id="sideMenu">
+      <span class="divider line one-line"></span>
+      <span class="already"> Cerrar sesión actual</span>
+      <ion-button type="submit" color="warning" (click)="authService.SignOut()" expand="block"
+        >
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+        Cerrar Sesión
+      </ion-button>  
+      <br>
+      <br>
+      <span class="divider line one-line"></span>
+      <span class="already"> ¿Eliminar su cuenta para siempre?</span>
+      <ion-button type="submit" size="small" color="danger" (click)="authService.DeleteUser()" expand="block"
+        >
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        Borrar Cuenta
+      </ion-button>        
+
+      <br>
+      <br>
+      <span class="divider line one-line"></span>
+      <span class="already"> Cambiar tema: </span>
+      <ion-item id="toggleDark">
+        <ion-icon slot="start" name="moon"></ion-icon>
+        <ion-label>Modo Oscuro</ion-label>
+        <ion-toggle slot="end" [ngModel]="darkMode" (ionChange)="change()"></ion-toggle>
+      </ion-item>
+    </ion-content>
+
+        
+  </ion-menu>
+
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>FitTruck App</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content>
+
+      <div id="divButtonsFather">
+        <div id="divButtonsChild">
+          <button  (click)="goToExerciseFavs()" block>
+            <ion-img src="assets/ejerciciosFav_logo.png"></ion-img>
+            Ejercicios Favoritos
+          </button>
+        
+          <button  (click)="goToProductFavs()" block>
+            <ion-img src="assets/productosFav_logo.png"></ion-img>
+            Productos Favoritos
+          </button>
+        
+        </div>
+          
+      </div>
+      
+      <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
+        <ion-fab-button size="small">
+          <ion-icon name="chevron-down-circle"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="bottom">
+          <ion-fab-button>
+            <ion-icon name="mail-outline" (click)="sendMailToTechnicalService()"></ion-icon>
+          </ion-fab-button>          
+          <ion-fab-button>
+            <ion-icon name="help-circle-outline" (click)="showHelp()"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+     
+    </ion-content>
+   
+  </div>
+  
+</ion-app>
+

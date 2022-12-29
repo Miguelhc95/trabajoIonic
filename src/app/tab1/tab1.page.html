@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Buscador de ejercicios por músculo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label position="floating">Músculo a buscar (en inglés)</ion-label>
+    <ion-input placeholder="Biceps, Triceps, Abs..." #searchString></ion-input>
+    <ion-button (click)="search(searchString.value)" expand="block">
+      Buscar Ejercicios
+      <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <ion-list>
+    <ion-item-divider color="transparent">
+      <ion-label>{{exerciseList.length}} Ejercicios propuestos:</ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let exercise of exerciseList" (click)="viewDetail(exercise)">  
+      <ion-thumbnail>
+        <img src="{{exercise.gifUrl}}">        
+      </ion-thumbnail>     
+      <ion-label>{{exercise.name}}</ion-label>      
+    </ion-item>
+  </ion-list>
+
+</ion-content>

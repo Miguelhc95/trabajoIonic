@@ -1,0 +1,49 @@
+ion-fab-button {
+    --background-activated: #ffffff;
+    --background-hover: #50574d;
+}
+
+#presentation{
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#menuTolbar{
+    --background: url("../../../assets/fitTruck_logo.png") no-repeat center center / cover ;  
+}
+
+#itemScroll{
+    --padding-start: 8px;
+}
+  
+#iconScroll{
+    font-size: 12px;
+    align-self: start;
+    margin: 15px 8px;
+}
+
+#exercisesFavButton{
+    position: center;
+    height: 70px;
+    width: 70px;
+}
+
+#productsFavButton{
+    height: 70px;
+    width: 70px;
+}
+
+#divButtonsFather{
+    position: relative;
+    padding: 20%;
+}
+
+#divsButtonsChild{
+    position: absolute;
+    padding: 25%;
+}
+

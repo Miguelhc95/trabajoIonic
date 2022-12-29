@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ejercicios favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+      <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+    
+      <ion-list>        
+        <ion-item id="itemScroll" [button]="true" *ngFor="let favoriteE of favoritesExercises" (click)="viewDetailExercise(favoriteE)">
+          <ion-thumbnail>
+            <img src="{{favoriteE.gifUrl}}">        
+          </ion-thumbnail> 
+         <ion-label>
+            <h2>{{ favoriteE.name }}</h2>
+          </ion-label>
+        </ion-item>
+      </ion-list>      
+</ion-content>

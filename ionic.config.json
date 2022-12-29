@@ -1,0 +1,8 @@
+{
+  "name": "trabajo-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "dca0b8c9"
+}

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Escáner de productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-divider color="transparent">
+    <ion-label>Abrir herramienta BarcodeScanner</ion-label>
+  </ion-item-divider>
+  <ion-button color="warning" (click)="scan()" expand="block">Escanear</ion-button>
+
+  <ion-item-divider color="transparent">
+    <ion-label>Últimos productos escaneados ({{productList.length}}):</ion-label>
+  </ion-item-divider>
+
+  <ion-list>            
+    <ion-item *ngFor="let productFav of productList" (click)="fetchData(productFav)">{{productFav}}</ion-item>
+  </ion-list>
+</ion-content>
+
+  

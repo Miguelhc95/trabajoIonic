@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form>
+      <div class="input-group">
+        <ion-item lines="full">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" placeholder="example@domain.es" [clearInput]="true" #email required></ion-input>               
+        </ion-item>
+        <ion-item lines="full">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" #password required></ion-input>   
+        </ion-item>      
+      </div> 
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" (click)="logIn(email, password)" expand="block" shape="round" color="success">
+              Iniciar Sesión
+            </ion-button>
+            <br>
+            <ion-item-divider color="transparent">
+              <ion-label>¿Olvidó la contraseña?</ion-label>
+            </ion-item-divider>
+            <ion-button color="warning" [routerLink]="['/password-reset']" expand="block" fill="outline">
+              Recuperar contraseña
+            </ion-button>      
+          </ion-col>
+        </ion-row>     
+    </form>
+  
+  
+ 
+  <ion-row>
+    <ion-col>
+      
+    </ion-col>
+  </ion-row> 
+</ion-content>
